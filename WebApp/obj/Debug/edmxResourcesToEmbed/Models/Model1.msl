@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="newdatabase9ModelStoreContainer" CdmEntityContainer="newdatabase9Entities">
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="newdatabase9Model.Project">
+        <MappingFragment StoreEntitySet="Project">
+          <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+          <ScalarProperty Name="Project_Code" ColumnName="Project_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resources">
+      <EntityTypeMapping TypeName="newdatabase9Model.Resource">
+        <MappingFragment StoreEntitySet="Resource">
+          <ScalarProperty Name="Resource_ID" ColumnName="Resource_ID" />
+          <ScalarProperty Name="Resource_Name" ColumnName="Resource_Name" />
+          <ScalarProperty Name="Billing_Type" ColumnName="Billing_Type" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Shore" ColumnName="Shore" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skills">
+      <EntityTypeMapping TypeName="newdatabase9Model.Skill">
+        <MappingFragment StoreEntitySet="Skill">
+          <ScalarProperty Name="Skill_ID" ColumnName="Skill_ID" />
+          <ScalarProperty Name="Skill_Name" ColumnName="Skill_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

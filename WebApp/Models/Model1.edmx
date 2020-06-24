@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="newdatabase9Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'newdatabase9.dbo.Project' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="Project_Name" />
+            <PropertyRef Name="Project_Code" />
+          </Key>
+          <Property Name="Project_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Project_Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'newdatabase9.dbo.Resource' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Resource">
+          <Key>
+            <PropertyRef Name="Resource_ID" />
+            <PropertyRef Name="Resource_Name" />
+            <PropertyRef Name="Billing_Type" />
+            <PropertyRef Name="City" />
+            <PropertyRef Name="Shore" />
+          </Key>
+          <Property Name="Resource_ID" Type="int" Nullable="false" />
+          <Property Name="Resource_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Billing_Type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Shore" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'newdatabase9.dbo.Skill' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="Skill_ID" />
+            <PropertyRef Name="Skill_Name" />
+          </Key>
+          <Property Name="Skill_ID" Type="int" Nullable="false" />
+          <Property Name="Skill_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="newdatabase9ModelStoreContainer">
+          <EntitySet Name="Project" EntityType="Self.Project" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Project].[Project_Name] AS [Project_Name], 
+    [Project].[Project_Code] AS [Project_Code]
+    FROM [dbo].[Project] AS [Project]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Resource" EntityType="Self.Resource" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Resource].[Resource_ID] AS [Resource_ID], 
+    [Resource].[Resource_Name] AS [Resource_Name], 
+    [Resource].[Billing_Type] AS [Billing_Type], 
+    [Resource].[City] AS [City], 
+    [Resource].[Shore] AS [Shore]
+    FROM [dbo].[Resource] AS [Resource]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Skill" EntityType="Self.Skill" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Skill].[Skill_ID] AS [Skill_ID], 
+    [Skill].[Skill_Name] AS [Skill_Name]
+    FROM [dbo].[Skill] AS [Skill]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="newdatabase9Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="Project_Name" />
+            <PropertyRef Name="Project_Code" />
+          </Key>
+          <Property Name="Project_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Project_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Resource">
+          <Key>
+            <PropertyRef Name="Resource_ID" />
+            <PropertyRef Name="Resource_Name" />
+            <PropertyRef Name="Billing_Type" />
+            <PropertyRef Name="City" />
+            <PropertyRef Name="Shore" />
+          </Key>
+          <Property Name="Resource_ID" Type="Int32" Nullable="false" />
+          <Property Name="Resource_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Billing_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Shore" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Skill">
+          <Key>
+            <PropertyRef Name="Skill_ID" />
+            <PropertyRef Name="Skill_Name" />
+          </Key>
+          <Property Name="Skill_ID" Type="Int32" Nullable="false" />
+          <Property Name="Skill_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="newdatabase9Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Projects" EntityType="Self.Project" />
+          <EntitySet Name="Resources" EntityType="Self.Resource" />
+          <EntitySet Name="Skills" EntityType="Self.Skill" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="newdatabase9ModelStoreContainer" CdmEntityContainer="newdatabase9Entities">
+          <EntitySetMapping Name="Projects">
+            <EntityTypeMapping TypeName="newdatabase9Model.Project">
+              <MappingFragment StoreEntitySet="Project">
+                <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+                <ScalarProperty Name="Project_Code" ColumnName="Project_Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Resources">
+            <EntityTypeMapping TypeName="newdatabase9Model.Resource">
+              <MappingFragment StoreEntitySet="Resource">
+                <ScalarProperty Name="Resource_ID" ColumnName="Resource_ID" />
+                <ScalarProperty Name="Resource_Name" ColumnName="Resource_Name" />
+                <ScalarProperty Name="Billing_Type" ColumnName="Billing_Type" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Shore" ColumnName="Shore" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Skills">
+            <EntityTypeMapping TypeName="newdatabase9Model.Skill">
+              <MappingFragment StoreEntitySet="Skill">
+                <ScalarProperty Name="Skill_ID" ColumnName="Skill_ID" />
+                <ScalarProperty Name="Skill_Name" ColumnName="Skill_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

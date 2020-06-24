@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="newdatabase9Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="Project_Name" />
+      <PropertyRef Name="Project_Code" />
+    </Key>
+    <Property Name="Project_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Project_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Resource">
+    <Key>
+      <PropertyRef Name="Resource_ID" />
+      <PropertyRef Name="Resource_Name" />
+      <PropertyRef Name="Billing_Type" />
+      <PropertyRef Name="City" />
+      <PropertyRef Name="Shore" />
+    </Key>
+    <Property Name="Resource_ID" Type="Int32" Nullable="false" />
+    <Property Name="Resource_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Billing_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Shore" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="Skill_ID" />
+      <PropertyRef Name="Skill_Name" />
+    </Key>
+    <Property Name="Skill_ID" Type="Int32" Nullable="false" />
+    <Property Name="Skill_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="newdatabase9Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Projects" EntityType="Self.Project" />
+    <EntitySet Name="Resources" EntityType="Self.Resource" />
+    <EntitySet Name="Skills" EntityType="Self.Skill" />
+  </EntityContainer>
+</Schema>
